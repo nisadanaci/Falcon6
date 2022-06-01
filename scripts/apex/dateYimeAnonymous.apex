@@ -1,0 +1,11 @@
+DateTimeMethodsDemo dtm = new DateTimeMethodsDemo();
+date newDate = date.today();
+boolean lpCheck1 = dtm.leapYearCheck(date.today());
+system.debug('leap year check 1 ' + lpCheck1);
+date dt1 = date.newInstance(2020, 1, 1);
+boolean lpCheck2 = dtm.leapYearCheck(dt1);
+system.debug('leap year check 2 ' + lpCheck2);
+//dtm.calculateageInMonths();
+//dtm.calculateAgeInDays();
+//dtm.printSubscriptionEndDate();
+//dtm.printOfferEndDateTime();

@@ -1,0 +1,1 @@
+select id, name, phone, website, accountnumber from account where (phone != null or Website !=null) and AccountNumber != null 

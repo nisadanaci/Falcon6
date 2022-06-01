@@ -1,0 +1,1 @@
+SELECT leadSource, status, count(name) from lead Group By Leadsource, status

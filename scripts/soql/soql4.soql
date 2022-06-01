@@ -1,0 +1,2 @@
+select name, Industry from account where industry = 'Energy' limit 2
+
