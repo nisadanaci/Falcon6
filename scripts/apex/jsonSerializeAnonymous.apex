@@ -1,6 +1,6 @@
 Account a = new Account();
 a.Name = 'Mone';
-a.Phone = '';
+a.Phone = null;
 a.AnnualRevenue = 909099834;
 
 
@@ -12,3 +12,7 @@ b.Site ='';
 list<Account> ab = new list<account>{a,b};
 string AccountJSON1 = JSON.serialize(ab);
 system.debug(AccountJSON1);
+
+list<account> listAccount = [select id, name, phone, site, annualRevenue from account limit 5];
+string AccountJSON22 = JSON.serialize(listAccount);
+system.debug(AccountJSON22);
