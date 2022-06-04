@@ -1,0 +1,1 @@
+AnimalsCallout.fetchAnimals();
