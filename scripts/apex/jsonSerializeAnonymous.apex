@@ -1,3 +1,5 @@
+//How to convert list<sobject> or sObject to JSON?
+//use JSON.seriliaze();
 Account a = new Account();
 a.Name = 'Mone';
 a.Phone = null;
