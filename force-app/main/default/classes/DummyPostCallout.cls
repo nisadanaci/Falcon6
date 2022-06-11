@@ -42,6 +42,7 @@ public with sharing class DummyPostCallout {
            //insert + update = upsert
            //If ID is found __. update
            // If ID NOT --> insert
+          // insert listPosts;
            upsert listPosts id__c;
        }else{
            system.debug(response.getStatus());
