@@ -1,28 +1,34 @@
+//requirements go to Rest callout Part 1 haziran 3 videos and slayt Create a senario
+
+
 public with sharing class AnimalsCallout {
-   private static string GET_ANIMALS_ENDPOINT = CalloutInFo__mdt.getInstance('GET_ANIMALS').Endpoint__c;
-   private static string POST_ANIMALS_ENDPOINT = CalloutInFo__mdt.getInstance('POST_ANIMALS').Endpoint__c;
+    private static string GET_ANIMALS_ENDPOINT = CalloutInfo__mdt.getInstance('GET_ANIMALS').Endpoint__c;
+    private static string POST_ANIMALS_ENDPOINT = CalloutInfo__mdt.getInstance('POST_ANIMALS').Endpoint__c;
+    private static string HTTP_GET = 'GET';
+    private static string HTTP_POST = 'POST';
     public static void fetchAnimals(){
        //1. prepare request
        HttpRequest Request = new HttpRequest();
        request.setEndPoint(GET_ANIMALS_ENDPOINT);
-       request.setMethod('GET');//we are doing get callout we just want to get to information at a time ony one external system give us at time a one we need to information about to API  Method in s GET.
+       request.setMethod('GET');//we are doing get callout we just want to get to information at a time ony one external system give us at time a one we need to information about to API  Method in s GET. this is the method name "gET"
 
        //2. prepare http
        Http http = new http(); //http is a class we created the new instance
 
        //3.send request, received response (return us to response )
-       HttpResponse response = http.send(request);
+       HttpResponse response = http.send(request); //request end point and method Line 12- 13 ten geliyor
        system.debug('status' + response.getStatus());
        system.debug('status code ' + response.getStatusCode());
 
 
-       //4. process the responce
+       //4. process the response
        if(response.getStatusCode() == 200){
-           string animalsJSON = response.getBody();
+           string animalsJSON = response.getBody(); //inside the body Json information return Json and json always string sothat we create string 
            system.debug(animalsJSON);
            
            //Deserializes the JSON string into collections of primitve data types.
           //if the response is unknown to us, JSON deseriliaze it to Map<string,object>
+          //Type cast
            object ob = jSON.deserializeUntyped(animalsJSON);
            map<string, object> results = (Map<string, object>)ob;
            system.debug('results = ' + results);

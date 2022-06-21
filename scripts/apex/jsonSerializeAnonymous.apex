@@ -1,4 +1,4 @@
-//How to convert list<sobject> or sObject to JSON?
+//How to convert list<sobject> or sObject to JSON?           
 //use JSON.seriliaze();
 Account a = new Account();
 a.Name = 'Mone';
@@ -12,9 +12,19 @@ b.Phone= '986545632';
 b.Site ='';
 
 list<Account> ab = new list<account>{a,b};
+//convert JSON type with seriliaze Method
 string AccountJSON1 = JSON.serialize(ab);
 system.debug(AccountJSON1);
+
+
 
 list<account> listAccount = [select id, name, phone, site, annualRevenue from account limit 5];
 string AccountJSON22 = JSON.serialize(listAccount);
 system.debug(AccountJSON22);
+
+ 
+ 
+
+
+
+
