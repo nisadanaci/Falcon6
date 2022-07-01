@@ -13,17 +13,17 @@ public with sharing class customContactAPITest {
         insert c;
 
 
-        //prapre RESt Request
+        //prapre RESt Request //manually setting the uri 
         RestRequest Request = new RestRequest();
         Request.requestURI = '/ContactCustom/'+c.Id;
         Request.httpMethod = 'GET';
 
-        RestContext.request = Request;
+        RestContext.request = Request;  
 
         Test.startTest();
         Contact cReturn = CustomContactAPI.getContactId();
         Test.stopTest();
 
-        system.assert(c.Retrun.Name == c.Name);
+        system.assert(cReturn.Name == c.Name);
     }
 }

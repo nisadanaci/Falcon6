@@ -72,7 +72,7 @@ public class SOQLDemoChildParentTest{
             o.StageName = 'Closed Won';
             o.CloseDate = date.today(); //required in opportunity so that we wrote here.
             if(i < 100){
-                o.AccountId = listAccounts[0].id; //burda fetching yaaaaapiyoruz accountId ile
+                o.AccountId = listAccounts[0].id;
             } else if(i < 200){
                 o.AccountId = listAccounts[1].id;
             }else if(i < 300){

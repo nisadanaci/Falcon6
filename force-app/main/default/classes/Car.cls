@@ -14,20 +14,18 @@ public class Car {
       //2. return type
       
       
-    public void switchOn() {   
-       //this is method body
-       //updated code
-       Datetime switchOnTime = Datetime.now();              
+    public void switchOn() {                  
        system.debug('starting the car.');   
     }
 
     public void drive(){
-       //system.debug(switchOnTime);
        system.debug('driving ' + carName);
       }
       
        public void driveAtMaxSpeed(){
           string drivingDescription = 'driving ' + carName + 'at ' + maxSpeedKMperHour + 'km/h';
-          system.debug(drivingDescription);   
+          system.debug(drivingDescription);
+
+       
     }
 }

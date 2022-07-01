@@ -33,7 +33,7 @@ public class LoopDemo {
     public void print_N_Odd_numbers(integer startInt, integer endInt){
         for(Integer i =startInt; i<= endInt; i++) {
             integer modI = math.mod(i, 2);
-            if(modI == 1) system.debug(i);
+            if(modI ==1) system.debug(i);
         }
     }
 }

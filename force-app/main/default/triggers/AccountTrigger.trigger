@@ -1,39 +1,89 @@
 trigger AccountTrigger on Account (before insert, before update, after insert, after update) {
 
+// //On user Updating account record, if billing address is changed, update all its child contacts mailling address filed same as account billing address
+// //Which object: Account
+// //What Operation: Update
+// //Which Event: After
+// If(Trigger.isAfter & Trigger.IsUpdate){
+//     Set<Id> accIdsBillingAddChanged = new set<Id>();
+//     for(Account accRecNew: Trigger.New){
+//         Account accRecOld = Trigger.OldMap.get(accRecNew.id);
+//         If(accRecNew.BillingStreet!= accRecOld.BillingStreet){
+//             accIdsBillingAddChanged.add(accRecNew.id);
+//         }
+//     }
+//     //This set accIdsBillingAddChanged will have accuntIds which got billing address changed
+// List<Account> accWithContacts = [SELECT id, Name,billingcity,billingstreet,billingstate,billingcountry,(Select id, name from Contacts) from Account where Id in :accIdsBillingAddChanged];
+// List<Contact> conListUpdate = new List<Contact>();
+    
+//     For(Account acc: accWithContacts){
+//         List<Contact> conOfTheLoopAccount = acc.contacts;
+//         For(Contact con: conOfTheLoopAccount){
+//             con.MailingStreet = acc.BillingStreet;
+//             con.MailingCity = acc.BillingCity;
+//             con.MailingState = acc.BillingState;
+//             con.MailingCountry = acc.BillingCountry;
+//             conListUpdate.add(con);
+//         }
+//     }
+//     if(conListUpdate.size()>0){
+//         Update conListUpdate;
+//     }
+// }
 
-if(trigger.isAfter && trigger.isUpdate){
-
-    AccountTriggerHandler.updateVipForALLContacts(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
-}
 
 
-if(trigger.isBefore){
-    system.debug('Before insert/update trigger on Account object');
 
-    AccountTriggerHandler.updateAccountDescription(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
-    system.debug('before insert/update trigger end.');
-    map<id, account> newAccountMap =trigger.newMap;
-    map<id, account> oldAccountMap =trigger.oldMap;
-    For(Account eachAcc: Trigger.new){
-        boolean updateDesc =false;
-        if(trigger.isInsert && eachAcc.Active__c=='Yes'){
-        //JUST set the field value
-            updateDesc =true;
-            }
-        if(trigger.isUpdate){
-            Account oldAccount = oldAccountMap.get(eachacc.Id);
-            string oldAccountActive =oldAccount.Active__c;
-            if(eachAcc.Active__c=='Yes' && oldAccountActive !='Yes'){
-                updateDesc =true;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// if(trigger.isAfter && trigger.isUpdate){
+
+//     AccountTriggerHandler.updateVipForALLContacts(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
+// }
+
+
+// if(trigger.isBefore){
+//     system.debug('Before insert/update trigger on Account object');
+
+//     AccountTriggerHandler.updateAccountDescription(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
+//     system.debug('before insert/update trigger end.');
+//     map<id, account> newAccountMap =trigger.newMap;
+//     map<id, account> oldAccountMap =trigger.oldMap;
+//     For(Account eachAcc: Trigger.new){
+//         boolean updateDesc =false;
+//         if(trigger.isInsert && eachAcc.Active__c=='Yes'){
+//         //JUST set the field value
+//             updateDesc =true;
+//             }
+//         if(trigger.isUpdate){
+//             Account oldAccount = oldAccountMap.get(eachacc.Id);
+//             string oldAccountActive =oldAccount.Active__c;
+//             if(eachAcc.Active__c=='Yes' && oldAccountActive !='Yes'){
+//                 updateDesc =true;
                 
-                // system.debug(eachAcc.Active__c);
-            }
-            if(updateDesc){
-                eachAcc.Description ='Account is now active Enjoy!';
-            }
-        }
-    }
- }
+//                 // system.debug(eachAcc.Active__c);
+//             }
+//             if(updateDesc){
+//                 eachAcc.Description ='Account is now active Enjoy!';
+//             }
+//         }
+//     }
+//  }
 
 
 

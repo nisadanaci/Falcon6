@@ -49,12 +49,3 @@ public class SoqlDemo {
     system.debug(listAcc);
   }
 }
-
-
-
-
-
-
-
-
-

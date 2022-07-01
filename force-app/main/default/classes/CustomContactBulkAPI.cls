@@ -18,4 +18,3 @@ global with sharing class CustomContactBulkAPI {
         return listContacts;
     }
 }
-

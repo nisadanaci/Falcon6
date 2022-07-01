@@ -3,7 +3,7 @@ public with sharing class SPTriggerHandlerTest {
 @isTest
     private static void testMethod1(){
 //1.prepare Data
-    Salesforce_Project__c sp = new Salesforce_Project__c();  //burda iki tane data create ediyoruz.
+    Salesforce_Project__c sp = new Salesforce_Project__c();
         sp.project_Name__c = 'Teach asynch  is Falcons';
         sp.Description__c ='All 40% are greate learner, still';
 
@@ -12,7 +12,7 @@ public with sharing class SPTriggerHandlerTest {
         sp1.Description__c ='All 40% are greate learner, still';
 
 
-        List<Salesforce_Project__c> lstSP = new List<Salesforce_Project__c>{sp, sp1}; //create ettigim datalara liste yaziyorum
+        List<Salesforce_Project__c> lstSP = new List<Salesforce_Project__c>{sp, sp1};
         insert lstSP;
 
         set<id> spIds = new set<id>{sp.id, sp1.id};
@@ -23,6 +23,5 @@ public with sharing class SPTriggerHandlerTest {
 
         List<Salesforce_Project__c> sps = [Select id, description__c from Salesforce_Project__c];
         system.assert(sps[0].Description__c.containsIgnoreCase('future'));
-        
    }
 }

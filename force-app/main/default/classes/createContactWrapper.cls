@@ -5,4 +5,4 @@ global with sharing class createContactWrapper {
    global string phoneNumber;
    global string accountId;
 }
-//we have 5 class variables 
+//we have 5 class variables

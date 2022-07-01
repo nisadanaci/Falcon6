@@ -19,7 +19,7 @@ global class CustomContactAPI {
 
 @HttpPost
    global static id createContact(
-    string fName, string lName, string emailId, string phoneNumber, string accountId    //we have 5 class variables
+    string fName, string lName, string emailId, string phoneNumber, string accountId
    ){
         Contact c =new contact();
         c.FirstName = fName;

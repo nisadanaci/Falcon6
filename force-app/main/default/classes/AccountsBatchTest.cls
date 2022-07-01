@@ -29,6 +29,7 @@ public with sharing class AccountsBatchTest {
     test.startTest();
     AccountsBatch ab = new AccountsBatch();
     database.executeBatch(ab, 501);
+    //Alternative way of calling batchable apex: database.executeBatch(new AccountsBatch(),501);
     test.stopTest();
 
     //2)) : END::
@@ -40,7 +41,3 @@ public with sharing class AccountsBatchTest {
     
     }
     }
-    
-    
-    
-

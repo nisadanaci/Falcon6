@@ -30,9 +30,6 @@ public class StringDemoClass {
         //4. 
         string apexx = 'apex';
         string ap = 'APEXX';
-        // equals check if two strings are same or not.
-        //if same returns true.
-        //string1.equals(string2)
         boolean apexCheck = apexx.equals(ap);
         system.debug('apex check ' + apexCheck);
     }

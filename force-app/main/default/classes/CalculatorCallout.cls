@@ -19,4 +19,3 @@ public with sharing class CalculatorCallout {
     return calc.doDivide(num1, num2);
    }
 }
-
