@@ -17,6 +17,8 @@ export default class TrackProperty extends LightningElement {
 // @track
 //location = {@track is thats a decorator stating it is a reactive }
 
+//https://www.lightningdesignsystem.com/
+
 
 /*details : {
    name : "Jeff Bezos",

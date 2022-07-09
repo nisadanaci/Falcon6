@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 
 export default class TwoWayDataBinding extends LightningElement {
-    fullname = "Balakrishna";
+    fullname = "NisaDanaci";
     title = "Salesforce Developer";
 
     handleChange(event) {
