@@ -26,13 +26,19 @@ public with sharing class ContactCalloutFuture {
 
     Http http = new Http();
     HttpResponse response = http.send(request);
+    System.debug('Status Code: '+ response.getStatusCode());
+    System.debug('Response: ' + response.getBody());
 
-    if (response.getStatusCode()==200) {
-        System.debug(response.getStatus() + response.getBody());
-
+    if (response.getStatusCode() == 201) {
+        //System.debug(response.getStatus() + response.getBody());
+        //crate success log
+        //create a log=> it can be info incase of success, error incase of error;
+        CommonUtilities.CreateLog('Success', 'ContactCalloutFuture.sendDataGo', response.getStatus(), response.getBody(), 'Integration');
 
     }else{
-        System.debug(response.getStatus() + response.getBody());
+        //System.debug(response.getStatus() + response.getBody());
+        CommonUtilities.CreateLog('Error', 'ContactCalloutFuture.sendDataGo', response.getStatus(), response.getBody(), 'Integration');
+        //create error log
     }
 
 
