@@ -1,0 +1,17 @@
+<template>
+    <lightning-card style="color: green" title="LIGHTINING RECORD FORM-OPPORTUNITY" icon-name="standard:opportunity">
+        <div class="slds-var-m-around_medium">
+            <lightning-avatar
+            class="slds-var-m-top_large" src="https://www.lightningdesignsystem.com/assets/images/avatar2.jpg"></lightning-avatar>
+           <lightning-record-form style="color: purple"
+           object-api-name={objectName}
+                record-id={recordId}
+                columns="2"
+                mode="view"
+                layout-type="Compact"
+                onsuccess={successHandler}
+                onerror={errorHandler}>
+        </lightning-record-form>
+        </div>
+    </lightning-card> 
+</template>
