@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="GET PICKLIST VALUES - STAGENAME">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+            label="Selected the StageName"
+            options={stageNameOptions}
+            value={selectedStageName}
+            onchange={changeHandler}>
+        </lightning-combobox>
+        <div>
+              Selected StageName is: {selectedStageName}
+        </div>
+        </div>
+    </lightning-card>
+</template>
