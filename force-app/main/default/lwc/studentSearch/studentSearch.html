@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="STUDENT INFO">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                type="search"
+                label="Enter student zip code"
+                value={searchWord}
+                onkeyup={changeHandler}>
+            </lightning-input>
+            <c-display-results
+                result={students}
+                error={error}
+                columns={columns}>
+            </c-display-results>
+        </div>
+    </lightning-card>
+    
+</template>

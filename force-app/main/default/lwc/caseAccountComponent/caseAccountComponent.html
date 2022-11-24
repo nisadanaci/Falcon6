@@ -1,0 +1,50 @@
+<template>
+    
+    <lightning-card title="Cases" icon-name="standard:case">
+        <template if:true={cases.data} for:each={cases.data} for:item="cas" >
+        <div key={cas.CaseNumber} class="slds-var-m-around_medium">
+            <table class="slds-table slds-table_cell-buffer ">
+                <tbody>
+                    <tr class="slds-hint-parent">
+                        <th scope="row"> 
+                            <button 
+                            class="slds-button"
+                            onclick={navigateToCase}
+                            value={cas.Id}>
+                            {cas.CaseNumber}
+                        </button>   
+                        </th>
+                        <th scope="row">  </th>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <th scope="row"> Type : </th>
+                        <th scope="row"> {cas.Type} </th>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                        <th scope="row"> Status: </th>
+                        <th scope="row"> {cas.Status} </th>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                       <template if:true={cas.ClosedDate}>
+                            <th scope="row"> Closed Date: </th>
+                            <th scope="row"> 
+                                <lightning-formatted-date-time 
+                                value={cas.ClosedDate} 
+                                year="numeric" 
+                                month="numeric" 
+                                day="numeric" 
+                                >
+                            </lightning-formatted-date-time> 
+                            </th>
+                        </template>
+
+                      
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+</template>
+    </lightning-card>
+    
+</template>

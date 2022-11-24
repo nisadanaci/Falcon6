@@ -26,3 +26,20 @@ DmlDemo.dmlMultipleRecordInsert_right();
 system.debug('doing dml now');
 DmlDemo.dmlMultipleRecordInsert_right2();
 system.debug('done dml now');
+
+
+
+
+
+// List<Account> listacc = new List<Account>();
+// For(integer i=0; i<250; i++){
+//     account a = new account();
+//     a.lastName = 'TestFlow'+i;
+//     a.PersonEmail= 'adamhagi85@gmail.com';   
+//     listacc.add(a);
+// }
+// insert listacc;
+
+
+// List<account> accList = [SELECT id, lastName from Account Where lastName like 'TestFlow%'];
+// delete accList;
